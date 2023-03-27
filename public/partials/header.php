@@ -16,6 +16,11 @@ if(!isset($_SESSION['check'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+    <div class="loader-container">
+        <div class="loader">
+        
+        </div>
+    </div>
     <div class="header">
         <div class="container">
             <div class="wrrap_main">
@@ -23,20 +28,20 @@ if(!isset($_SESSION['check'])) {
                     <img src="../img/logo.webp" alt="">
                     <ul>
                         <li>
-                            <a href="index.php">User</a>
+                            <a href="index.php?id=user" class="user">User</a>
                         </li>
                         <li>
-                            <a href="supplier.php">Supplier</a>
+                            <a href="supplier.php?id=supplier" class="supplier">Supplier</a>
                         </li>
                         <li>
-                            <a href="product.php">Product</a>
+                            <a href="product.php?id=product" class="product">Product</a>
                         </li>
                         
                         <li>
-                            <a href="order.php">Order</a>
+                            <a href="order.php?id=order" class="order">Order</a>
                         </li>
                         <li>
-                            <a href="logout.php">LogOut</a>
+                            <a href="logout.php" class="logOut">LogOut</a>
                         </li>
                     </ul>
                     <div class="log">

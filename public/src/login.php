@@ -22,7 +22,7 @@
                     <div id="login-row" class="row justify-content-center align-items-center">
                         <div id="login-column" class="col-md-6">
                             <div id="login-box" class="col-md-12">
-                                <form id="login-form" class="form" action="" method="post">
+                                <form id="login-form" class="form-login" action="" method="post">
                                     <h3 class="text-center text-info">Login</h3>
                                     <?php 
                                         if(isset($_SESSION['register'])){
@@ -36,11 +36,11 @@
                                     ?>
                                     <div class="form-group">
                                         <label for="username" class="text-info">Username:</label><br>
-                                        <input type="text" name="username" id="username" class="form-control">
+                                        <input type="text" name="username" id="username" class="form-control" required>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style="padding-top: 20px">
                                         <label for="password" class="text-info">Password:</label><br>
-                                        <input type="password" name="password" id="password" class="form-control">
+                                        <input type="password" name="password" id="password" class="form-control" required>
                                     </div>
                                     <div class="form-group" style="position: relative; left: 240px; top: 30px">
                                         <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
@@ -76,4 +76,8 @@
         </div>
     </main>
 </body>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="validation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 </html>
