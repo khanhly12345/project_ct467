@@ -28,7 +28,7 @@ if(!isset($_SESSION['check'])) {
                     <img src="../img/logo.webp" alt="">
                     <ul>
                         <li>
-                            <a href="index.php?id=user" class="user">User</a>
+                            <a href="index.php?id=user" class="user">Admin</a>
                         </li>
                         <li>
                             <a href="supplier.php?id=supplier" class="supplier">Supplier</a>

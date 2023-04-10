@@ -29,6 +29,10 @@
                                 <td><input type="text" name="name" id="fullname" class="form-control" value="<?php echo $row['name_supllier']?>"></td>
                             </tr>
                             <tr>
+                                <td>Code Supplier: </td>
+                                <td><input type="text" name="code_supllier" id="fullname" class="form-control" value="<?php echo $row['code_supllier']?>"></td>
+                            </tr>
+                            <tr>
                                 <td>Phone:</td>
                                 <td><input type="text" name="phone" id="fullname" class="form-control" value="<?php echo $row['phone']?>"></td>
                             </tr>
@@ -50,22 +54,23 @@
 
                             $id = $_POST['id'];
                             $query = "START TRANSACTION;
-                                        UPDATE supplier SET name_supllier=?,phone=?,address=? where id = ?;
+                                        UPDATE supplier SET name_supllier=?,code_supllier=?,phone=?,address=? where id = ?;
                                         UPDATE product SET ncc = ? where ncc = ?;
                                     COMMIT;
                             ";
                             $sth = $pdo->prepare($query);
                             $sth->execute([
                                 $_POST['name'],
+                                $_POST['code_supllier'],
                                 $_POST['phone'],
                                 $_POST['address'],
                                 $id,
-                                $_POST['name'],
+                                $_POST['code_supllier'],
                                 $name 
                             ]);
                             if($sth) {
                                 $_SESSION['edit_supplier'] = "<div class='success'>Edit successfully</div>";
-                                echo "<script>window.location = 'supplier.php'</script>";
+                                echo "<script>window.location = 'supplier.php?id=supplier'</script>";
                             }
                            
                         }

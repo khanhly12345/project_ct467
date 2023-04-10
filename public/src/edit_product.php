@@ -29,6 +29,10 @@
                                 <td><input type="text" name="name" id="fullname" class="form-control" value="<?php echo $row['name']?>"></td>
                             </tr>
                             <tr>
+                                <td>Purchase:</td>
+                                <td><input type="text" name="purchase" id="fullname" class="form-control" value="<?php echo $row['purchase']?>"></td>
+                            </tr>
+                            <tr>
                                 <td>Price:</td>
                                 <td><input type="text" name="price" id="fullname" class="form-control" value="<?php echo $row['price']?>"></td>
                             </tr>
@@ -53,11 +57,12 @@
                         if(isset($_POST['submit'])) {
 
                             $id = $_POST['id'];
-                            $query = "UPDATE product SET name=?,price=?,quantity=?,ncc=? where id = ?";
+                            $query = "UPDATE product SET name=?, purchase=? ,price=?,quantity=?,ncc=? where id = ?";
                                             
                             $sth = $pdo->prepare($query);
                             $sth->execute([
                                 $_POST['name'],
+                                $_POST['purchase'],
                                 $_POST['price'],
                                 $_POST['quantity'],
                                 $_POST['supplier'],

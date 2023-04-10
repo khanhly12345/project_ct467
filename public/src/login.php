@@ -53,14 +53,14 @@
                                     if(isset($_POST['submit'])) {
                                         $username = $_POST['username'];
                                         $password = md5($_POST['password']);
-                                        echo $password;
                                         $query = "SELECT * From user where account='$username' AND password='$password'";
                                         $sth = $pdo->prepare($query);
                                         $sth->execute();
+                                        $row = $sth->fetch();
                                         $count = $sth->rowCount();
                                         if($count > 0) {
                                             $_SESSION['login'] = "<div class='success'>Login successfully</div>";
-                                            $_SESSION['check'] = "<div class='error'>You need to login to the manager</div>";
+                                            $_SESSION['check'] = $row['id'];
                                             echo "<script>window.location = 'index.php'</script>";
                                         }else{
                                             echo "ktc";

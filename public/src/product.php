@@ -4,9 +4,9 @@
             <div class="wrap_content">
                 <h1>MANAGER PRODUCT</h1><br>
 
-                  <a href="add_product.php" class="btn btn-primary">Add Product</a>
+                  <a href="add_product.php?id=product" class="btn btn-primary">Add Product</a>
                   <div class="input-group">
-                    <form action="search.php" method="post" style="display: flex">
+                    <form action="search.php?id=product" method="post" style="display: flex">
                       <div class="form-outline">
                         <input type="text" id="form1" class="form-control" name="input"/>
                       </div>
@@ -43,8 +43,8 @@
                 <table class="table table-hover ">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Name product</th>
+                        <th scope="col">Purchase</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Supplier</th>
@@ -61,9 +61,9 @@
                           $n++;
                           ?>
                             <tr>
-                              <th scope="row"><?php echo "#"?></th>
                               <td><?php echo $row['name']?></td>
-                              <td><?php echo currency_format($row['price'])?></td>
+                              <td><?php echo currency_format($row['purchase'])?></td>
+                              <td style="color: red"><?php echo currency_format($row['price'])?></td>
                               <td><?php echo $row['quantity']?></td>
                               <td><?php echo $row['ncc']?></td>
                               <td><a href='edit_product.php?id=<?php echo $row['id']?>' class="btn btn-primary">Edit</a> <a href='delete_product.php?id=<?php echo $row['id']?>' class="btn btn-danger">Delete</a></td>

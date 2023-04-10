@@ -4,7 +4,7 @@
             <div class="wrap_content">
                 <h1>ORDER ITEMS</h1><br>
 
-                  <a href="add_order.php" class="btn btn-primary">Add Items</a>
+                  <a href="add_order.php?id=order" class="btn btn-primary">Add Items</a>
                 <br>
                 <?php 
                   if(isset($_SESSION['add_order'])) {
@@ -29,6 +29,7 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name product</th>
+                        <th scope="col">Purchase</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Supplier</th>
                         <th scope="col">Date</th>
@@ -47,6 +48,7 @@
                             <tr>
                               <th scope="row"><?php echo "#"?></th>
                               <td><?php echo $row['product']?></td>
+                              <td style="color: red"><?php echo currency_format($row['purchase'])?></td>
                               <td><?php echo $row['quantity']?></td>
                               <td><?php echo $row['supplier']?></td>
                               <td><?php echo $row['data']?></td>
@@ -56,7 +58,7 @@
                         }
                     ?>
                       <tr style="position: relative; left: 450px;">
-                        <th colspan="6" style="box-shadow: none !important"><a href="ganerate_pdf.php" class="btn btn-primary">PRINT</a></th>
+                        <td colspan="7" style="box-shadow: none !important"><a href="ganerate_pdf.php" class="btn btn-primary">PRINT</a></td>
                       </tr>
                     </tbody>
                   </table>

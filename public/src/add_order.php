@@ -18,6 +18,10 @@
                                 <td><input type="text" name="name" id="fullname" class="form-control"></td>
                             </tr>
                             <tr>
+                                <td>Purchase:</td>
+                                <td><input type="text" name="purchase" id="fullname" class="form-control"></td>
+                            </tr>
+                            <tr>
                                 <td>Quantity:</td>
                                 <td><input type="text" name="quantity" id="fullname" class="form-control"></td>
                             </tr>
@@ -36,10 +40,11 @@
                     try{
 
                         if(isset($_POST['submit'])) {
-                                $query = "call procedure_order_insert(?,?,?)";
+                                $query = "call procedure_order_insert(?,?,?,?)";
                                 $sth = $pdo->prepare($query);
                                 $sth->execute([
                                     $_POST['name'],
+                                    $_POST['purchase'],
                                     $_POST['quantity'],
                                     $_POST['supplier'],
                                 ]);

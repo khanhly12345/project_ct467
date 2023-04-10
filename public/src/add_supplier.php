@@ -18,6 +18,10 @@
                                 <td><input type="text" name="name" id="fullname" class="form-control"></td>
                             </tr>
                             <tr>
+                                <td>Code Supllier:</td>
+                                <td><input type="text" name="code_supllier" id="fullname" class="form-control"></td>
+                            </tr>
+                            <tr>
                                 <td>Phone:</td>
                                 <td><input type="text" name="phone" id="fullname" class="form-control"></td>
                             </tr>
@@ -37,16 +41,17 @@
                     try{
 
                         if(isset($_POST['submit'])) {
-                                $query = "call procedure_supplier_insert(?,?,?)";
+                                $query = "call procedure_supplier_insert(?,?,?,?)";
                                 $sth = $pdo->prepare($query);
                                 $sth->execute([
                                     $_POST['name'],
+                                    $_POST['code_supllier'],
                                     $_POST['phone'],
                                     $_POST['address'],
                                 ]);
                                 if($sth) {
                                     $_SESSION['add'] = "<div class='success'>Add successfully</div>";
-                                    echo "<script>window.location = 'supplier.php'</script>";
+                                    echo "<script>window.location = 'supplier.php?id=supplier'</script>";
                                 }
                                 
                         }

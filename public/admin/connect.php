@@ -8,7 +8,7 @@ try {
 	$reason = $e->getMessage();
     echo $reason;
 }
-function currency_format($number, $suffix = ' đ') {
+function currency_format($number, $suffix = ' VND') {
 	if (!empty($number)) {
 		return number_format($number, 0, ', ', '.') . "{$suffix}";
 	}

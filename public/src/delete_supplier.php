@@ -9,10 +9,10 @@
         ]);
         if($sth == true) {
             $_SESSION['delete_supplier'] = "<div class='success'>Delete successfully</div>";
-            echo "<script>window.location = 'supplier.php'</script>";
+            echo "<script>window.location = 'supplier.php?id=supplier'</script>";
         }else{
             $_SESSION['delete_supplier'] = "<div class='success'>Failed Delete </div>";
-            echo "<script>window.location = 'supplier.php'</script>";
+            echo "<script>window.location = 'supplier.php?id=supplier'</script>";
         }
     }
 

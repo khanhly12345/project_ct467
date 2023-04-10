@@ -37,7 +37,8 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name product</th>
+                        <th scope="col">Name product</th> 
+                        <th scope="col">Purchase</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Supplier</th>
@@ -57,7 +58,8 @@
                             <tr>
                               <th scope="row"><?php echo $n?></th>
                               <td><?php echo $row['name']?></td>
-                              <td><?php echo currency_format($row['price'])?></td>
+                              <td><?php echo currency_format($row['purchase'])?></td>
+                              <td style="color: red"><?php echo currency_format($row['price'])?></td>
                               <td><?php echo $row['quantity']?></td>
                               <td><?php echo $row['ncc']?></td>
                               <td><a href='edit_product.php?id=<?php echo $row['id']?>' class="btn btn-primary">Edit</a> <a href='delete_product.php?id=<?php echo $row['id']?>' class="btn btn-danger">Delete</a></td>

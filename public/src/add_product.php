@@ -18,6 +18,10 @@
                                 <td><input type="text" name="name" id="fullname" class="form-control"></td>
                             </tr>
                             <tr>
+                                <td>Purchase:</td>
+                                <td><input type="text" name="purchase" id="fullname" class="form-control"></td>
+                            </tr>
+                            <tr>
                                 <td>Pirce:</td>
                                 <td><input type="text" name="price" id="fullname" class="form-control"></td>
                             </tr>
@@ -39,17 +43,18 @@
                     try{
 
                         if(isset($_POST['submit'])) {
-                                $query = "call procedure_product_insert(?,?,?,?)";
+                                $query = "call procedure_product_insert(?,?,?,?,?)";
                                 $sth = $pdo->prepare($query);
                                 $sth->execute([
                                     $_POST['name'],
+                                    $_POST['purchase'],
                                     $_POST['price'],
                                     $_POST['quantity'],
                                     $_POST['supplier'],
                                 ]);
                                 if($sth) {
                                     $_SESSION['add_product'] = "<div class='success'>Add successfully</div>";
-                                    echo "<script>window.location = 'product.php'</script>";
+                                    echo "<script>window.location = 'product.php?id=product'</script>";
                                 }
                                 
                         }
